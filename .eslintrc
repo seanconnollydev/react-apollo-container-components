@@ -1,0 +1,31 @@
+{
+  "extends": ["airbnb", "plugin:jest/recommended"],
+  "parser": "babel-eslint", // Allows us to use es7 features
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "max-len": ["error", 150, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }], // Best Practices group decided to alter this
+    "no-underscore-dangle": "off", // Some keys returned from GraphQL may have dangling underscores
+    "react/jsx-filename-extension": "off",
+    "react/no-danger": "off", // The term dangerouslySetInnerHTML should be enough warning
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "invalidHref", "preferButton" ]
+    }],
+    "import/no-unresolved": [ "ignore": /^@nectar/ ],
+    "import/no-extraneous-dependencies": "off",
+    "no-use-before-define": [ "error", { "functions": false, "classes": false }],
+    "jest/consistent-test-it": ["error", {"fn": "test"}]
+  }
+}
