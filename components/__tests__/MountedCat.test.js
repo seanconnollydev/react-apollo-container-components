@@ -27,7 +27,7 @@ test('Mounted Cat', async () => {
     </MockedProvider>
   ));
 
-  await wait(0);
+  await wait(0); // Wait a tick to get past the loading state
   expect(wrapper.text()).toContain('id: 123');
   expect(wrapper.text()).toContain('name: Cat 123');
 });
