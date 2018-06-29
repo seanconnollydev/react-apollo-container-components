@@ -1,16 +1,7 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import GET_CAT_QUERY from './get-cat-query.graphql';
 import Cat from './Cat';
-
-export const HOC_GET_CAT_QUERY = gql`
-  {
-    cat(id: "123") {
-      id
-      name
-    }
-  }
-`;
 
 const CatContainerHOC = (props) => {
   const { loading, error, data } = props;
@@ -24,4 +15,4 @@ const CatContainerHOC = (props) => {
   return <Cat cat={data.cat} />;
 };
 
-export default graphql(HOC_GET_CAT_QUERY)(CatContainerHOC);
+export default graphql(GET_CAT_QUERY)(CatContainerHOC);

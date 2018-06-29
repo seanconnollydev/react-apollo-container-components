@@ -1,16 +1,7 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import GET_CAT_QUERY from './get-cat-query.graphql';
 import Cat from './Cat';
-
-export const GET_CAT_QUERY = gql`
-  {
-    cat(id: "123") {
-      id
-      name
-    }
-  }
-`;
 
 const CatContainer = () => (
   <Query query={GET_CAT_QUERY}>

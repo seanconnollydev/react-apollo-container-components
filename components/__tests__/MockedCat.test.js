@@ -4,8 +4,9 @@ import wait from 'waait';
 import { MockedProvider } from 'react-apollo/test-utils';
 // Make sure the MockComponent is imported before the CatContainer
 import MockComponent from '../../test-support/MockComponent';
-import CatContainer, { GET_CAT_QUERY } from '../CatContainer';
-import CatContainerHOC, { HOC_GET_CAT_QUERY } from '../CatContainerHOC';
+import GET_CAT_QUERY from '../get-cat-query.graphql';
+import CatContainer from '../CatContainer';
+import CatContainerHOC from '../CatContainerHOC';
 
 jest.mock('../Cat', () => MockComponent);
 
